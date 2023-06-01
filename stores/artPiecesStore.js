@@ -5,7 +5,7 @@ export const useArtPiecesStore = create(
   persist(
     (set) => ({
       pieces: [],
-      setPieces: (pieces) => set({ pieces }),
+      setPieces: (state) => set({ state }),
     }),
     {
       name: 'pieces-storage',

@@ -23,3 +23,19 @@ export const useArtPiecesInfo = create(
     }
   )
 )
+
+
+// export const useArtPiecesInfo = create((set) => ({
+//       comments: [],
+//       addComment: (comment, slug) =>
+//         set((state) => ({
+//           comments: [
+//           { slug: slug, text: comment, id: uid() },
+//             ...state.comments,
+//           ]
+//         })),
+//       removeComment: (id) =>
+//         set((state) => ({
+//           comments: state.comments.filter((comment) => comment.id !== id),
+//         }))
+// }))

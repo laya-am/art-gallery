@@ -7,13 +7,11 @@ import { useArtPiecesInfo } from "../../stores/artPiecesInfo";
 export default function ArtPieceDetails({image, title, artist, year, genre, slug}) {
     const comments = useArtPiecesInfo((state) => state.comments);
     const addComment = useArtPiecesInfo((state) => state.addComment);
+    const commentsBySlug = comments?.filter((comment) => comment.slug == slug)
 
     function handleSubmitComment(comment) {
         addComment(comment, slug);
-        console.log(commentsBySlug);
     }
-
-    const commentsBySlug = comments?.filter((comment) => comment.slug == slug)
 
     return (
         <div>
