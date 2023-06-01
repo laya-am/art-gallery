@@ -30,8 +30,10 @@ export default function App({ Component, pageProps }) {
       }
       // if the favPiece is not in the state, add it with isFunny set to true
       return [...favPieces, { slug, isFav: true }];
+      
     });
-    return favPieces;
+    console.log(favPieces)
+    // return favPieces;
   }
 
   if (error) return <div>failed to load</div>
@@ -41,7 +43,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Layout>
-        <Component onFavs={handleFavs} {...pageProps} />
+        <Component onFavs={handleFavs} favPieces={favPieces} {...pageProps} />
       </Layout>
     </>
   );
