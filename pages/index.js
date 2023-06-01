@@ -1,7 +1,7 @@
 import Spotlight from "../components/Spotlight";
 import { useArtPiecesStore } from "../stores/artPiecesStore";
 
-export default function SpotlightPage() {
+export default function SpotlightPage({onFavs}) {
   const pieces = useArtPiecesStore((state) => state.pieces);
 
   function getRandomPiece(pieces) {
@@ -16,10 +16,12 @@ export default function SpotlightPage() {
   const randomPiece = getRandomPiece(pieces);
 
   return (
-      <Spotlight       
+      <Spotlight
         image={randomPiece.imageSource}
         artist={randomPiece.artist}
         title={randomPiece.name}
+        slug={randomPiece.slug}
+        onFavs={onFavs}
       />
   );
 }
