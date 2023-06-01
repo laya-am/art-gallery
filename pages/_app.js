@@ -22,14 +22,12 @@ export default function App({ Component, pageProps }) {
     setFavPieces((favPieces) => {
       // find the favPiece in the state
       const favPiece = favPieces.find((favPiece) => favPiece.slug === slug);
-
       // if the favPiece is already in the state, toggle the isFav property
       if (favPiece) {
         return favPieces.map((favPiece) =>
         favPiece.slug === slug ? { ...favPiece, isFav: !(favPiece.isFav) } : favPiece
         );
       }
-
       // if the favPiece is not in the state, add it with isFunny set to true
       return [...favPieces, { slug, isFav: true }];
     });

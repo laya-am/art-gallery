@@ -15,6 +15,7 @@ export default function ArtPieces({pieces}) {
                     artist={painting.artist}
                     title={painting.name}
                     image={painting.imageSource}
+                    slug={painting.slug}
                   />
               </li>
           )
