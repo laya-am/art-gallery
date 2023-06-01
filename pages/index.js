@@ -1,36 +1,25 @@
-import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces";
 import Spotlight from "../components/Spotlight";
+import { useArtPiecesStore } from "../stores/artPiecesStore";
 
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+export default function SpotlightPage() {
+  const pieces = useArtPiecesStore((state) => state.pieces);
 
-const url = "https://example-apis.vercel.app/api/art";
-
-export default function HomePage() {
-
-  const { data, error, isLoading } = useSWR(url, fetcher)
-  console.log("beginning", data );
-
-  if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
-  if (!data){
-    return;
+  function getRandomPiece(pieces) {
+    const randomNumber = Math.floor(Math.random() * pieces.length);
+    return pieces[randomNumber];
   }
 
-  function getRandomPiece(data) {
-    const randomNumber = Math.floor(Math.random() * data.length);
-    return data[randomNumber];
+  if (pieces.length === 0) {
+    return <div>loading...</div>;
   }
-  const spotlight = getRandomPiece(data);
+
+  const randomPiece = getRandomPiece(pieces);
 
   return (
-    <div>
-      <ArtPieces data = { data } >Art Pieces</ArtPieces>
       <Spotlight       
-        image={spotlight.imageSource}
-        artist={spotlight.artist}
-        title={spotlight.name}
+        image={randomPiece.imageSource}
+        artist={randomPiece.artist}
+        title={randomPiece.name}
       />
-    </div>
   );
 }
