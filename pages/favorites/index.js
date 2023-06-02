@@ -3,14 +3,19 @@ import { useArtPiecesStore } from "../../stores/artPiecesStore";
 import ArtPiecesPreview from "../../components/ArtPiecesPreview";
 import styled from "styled-components";
 
-const StyledListItem= styled.li`
+const StyledListItem= styled.div`
   list-style-type: none
   `
-const StyledParent= styled.ul`
+const StyledParent= styled.div`
 display: flex;
 flex-direction:column;
 gap: 100px;
+margin-bottom: 100px;
 `
+const StyledHeading= styled.h1`
+  text-align: center;
+  margin: 100px
+  `
 
 export default function FavoritesPage({favPieces, onFavs}) {
     const pieces = useArtPiecesStore((state) => state.pieces);
@@ -23,8 +28,8 @@ export default function FavoritesPage({favPieces, onFavs}) {
     });
     console.log("heartedPieces", heartedPieces);
     return (
-    <div>
-        <h2>Favorites</h2>
+    <div style={{marginTop: "200px"}}>
+        {/* <StyledHeading>Favorites</StyledHeading> */}
         <StyledParent>
         {heartedPieces?.map((painting) => {
           return (

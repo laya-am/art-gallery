@@ -5,6 +5,7 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+    ${'' /* height: 100vh; */}
   }
 
   body {
@@ -14,5 +15,9 @@ export default createGlobalStyle`
     justify-content: center;
     gap:50px;
     flex-direction: column;
+    background-color: #F9F8EB;
+    position:relative;
+    min-height: 100vh;
+
   }
 `;

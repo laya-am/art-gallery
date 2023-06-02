@@ -14,7 +14,6 @@ gap: 30px;
 position: relative;
 `
 
-
 export default function ArtPiecesPreview({artist, title, image, slug, onFavs, favPieces }) {
 
   return (

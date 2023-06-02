@@ -10,6 +10,7 @@ display: flex;
 flex-direction:column;
 align-items: center;
 gap: 30px;
+margin: 200px 0;
 `
 const StyledDivColors = styled.div`
   display: flex;

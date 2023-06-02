@@ -7,7 +7,7 @@ border: none;
 background-color: transparent;
 position: absolute;
 bottom: 90px;
-left: 120px;
+left: 150px;
 `
 
 export default function FavoriteButton({onFavs, slug, favPieces}) {
