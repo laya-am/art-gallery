@@ -20,7 +20,7 @@ export default function ArtPieceSlug({favPieces, onFavs}) {
 console.log(currentPiece)
 
     return (
-        <ArtPieceDetails image={currentPiece.imageSource} title={currentPiece.name} artist={currentPiece.artist} genre={currentPiece.genre} year={currentPiece.year} favPieces={favPieces}> onFavs={onFavs}</ArtPieceDetails>
+        <ArtPieceDetails image={currentPiece.imageSource} title={currentPiece.name} artist={currentPiece.artist} genre={currentPiece.genre} year={currentPiece.year} slug={currentPiece.slug} favPieces={favPieces} onFavs={onFavs}></ArtPieceDetails>
         
     )
 }
