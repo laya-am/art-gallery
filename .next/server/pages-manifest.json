@@ -4,6 +4,5 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/art-pieces/[slug]": "pages/art-pieces/[slug].js",
-  "/art-pieces": "pages/art-pieces.js",
-  "/favorites": "pages/favorites.js"
+  "/art-pieces": "pages/art-pieces.js"
 }
