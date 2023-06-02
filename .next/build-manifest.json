@@ -39,11 +39,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/art-pieces/[slug].js"
-    ],
-    "/favorites": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/favorites.js"
     ]
   },
   "ampFirstPages": []
