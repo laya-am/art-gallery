@@ -1,10 +1,9 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/art-pieces": "pages/art-pieces.html",
-  "/art-pieces/[slug]": "pages/art-pieces/[slug].html",
   "/_error": "pages/_error.js",
-  "/favorites": "pages/favorites.html",
-  "/": "pages/index.html",
-  "/404": "pages/404.html"
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/art-pieces/[slug]": "pages/art-pieces/[slug].js",
+  "/art-pieces": "pages/art-pieces.js",
+  "/favorites": "pages/favorites.js"
 }
