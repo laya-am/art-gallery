@@ -3,11 +3,19 @@ import styled from "styled-components";
 import FavoriteButton from "../FavoriteButton"
 
 const StyledImage= styled.img`
-width: 300px;`
+width: 70%;`
+
+const StyledParent= styled.div`
+display: flex;
+flex-direction:column;
+align-items: center;
+gap: 30px;
+position: relative;
+`
 
 export default function Spotlight({image, artist, title, slug, onFavs, favPieces}) {
   return (
-    <div>
+    <StyledParent>
         <FavoriteButton onFavs={onFavs} slug={slug} favPieces={favPieces} />
         <StyledImage
             src={image}
@@ -15,6 +23,6 @@ export default function Spotlight({image, artist, title, slug, onFavs, favPieces
         ></StyledImage>
         <h2>{title}</h2>
         <p>{artist}</p>
-    </div>
+    </StyledParent>
   )
 }

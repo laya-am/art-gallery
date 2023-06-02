@@ -1,6 +1,16 @@
 import ArtPieces from "../../components/ArtPieces";
 import { useArtPiecesStore } from "../../stores/artPiecesStore";
 import ArtPiecesPreview from "../../components/ArtPiecesPreview";
+import styled from "styled-components";
+
+const StyledListItem= styled.li`
+  list-style-type: none
+  `
+const StyledParent= styled.ul`
+display: flex;
+flex-direction:column;
+gap: 100px;
+`
 
 export default function FavoritesPage({favPieces, onFavs}) {
     const pieces = useArtPiecesStore((state) => state.pieces);
@@ -15,10 +25,10 @@ export default function FavoritesPage({favPieces, onFavs}) {
     return (
     <div>
         <h2>Favorites</h2>
-        <ul>
+        <StyledParent>
         {heartedPieces?.map((painting) => {
           return (
-              <li key={painting[0].slug}>
+              <StyledListItem key={painting[0].slug}>
                   <ArtPiecesPreview
                     artist={painting[0].artist}
                     title={painting[0].name}
@@ -27,10 +37,10 @@ export default function FavoritesPage({favPieces, onFavs}) {
                     onFavs={onFavs}
                     favPieces={favPieces}
                   />
-              </li>
+              </StyledListItem>
           )
         })}
-      </ul>
+      </StyledParent>
     </div>
     );
 }

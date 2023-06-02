@@ -1,16 +1,27 @@
 import React from 'react'
 import ArtPiecesPreview from '../ArtPiecesPreview'
+import styled from 'styled-components';
+
+const StyledListItem= styled.li`
+  list-style-type: none
+  `
+const StyledParent= styled.ul`
+display: flex;
+flex-direction:column;
+gap: 100px;
+`
 
 export default function ArtPieces({pieces, onFavs, favPieces}) {
   console.log(pieces);
-  
+
+
   return (
     <div>
       <h2>list of all the paintings</h2>
-      <ul>
+      <StyledParent>
         {pieces?.map((painting) => {
           return (
-              <li key={painting.slug}>
+              <StyledListItem key={painting.slug}>
                   <ArtPiecesPreview 
                     artist={painting.artist}
                     title={painting.name}
@@ -19,10 +30,10 @@ export default function ArtPieces({pieces, onFavs, favPieces}) {
                     onFavs={onFavs}
                     favPieces={favPieces}
                   />
-              </li>
+              </StyledListItem>
           )
         })}
-      </ul>
+      </StyledParent>
     </div>
   )
 }

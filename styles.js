@@ -10,5 +10,9 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    flex-direction: column;
   }
 `;
