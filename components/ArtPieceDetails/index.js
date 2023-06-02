@@ -5,6 +5,19 @@ import Link from "next/link";
 import { useArtPiecesInfo } from "../../stores/artPiecesInfo";
 import styled from "styled-components";
 
+const StyledParent= styled.div`
+display: flex;
+flex-direction:column;
+align-items: center;
+gap: 30px;
+margin: 200px 0;
+`
+const StyledButton= styled.button`
+font-size: 20px;
+border-radius:10px;
+padding: 10px
+`
+
 const StyledDivColors = styled.div`
   display: flex;
 `;
@@ -30,7 +43,7 @@ export default function ArtPieceDetails({image, title, artist, year, genre, colo
     }
 
     return (
-        <div>
+        <StyledParent>
         <ArtPiecesPreview 
             artist ={artist} 
             title={title} 
@@ -39,8 +52,10 @@ export default function ArtPieceDetails({image, title, artist, year, genre, colo
             favPieces={favPieces} 
             onFavs={onFavs}>
         </ArtPiecesPreview>
-        <p>{year}</p> 
-        <p>{genre}</p>
+        <div style={{textAlign: "center"}}>
+        <p>year: {year}</p> 
+        <p>genre: {genre}</p>
+        </div>
         <StyledDivColors>
                 {colors?.map((color, i) => (
                     <StyledDivCircle
@@ -50,13 +65,13 @@ export default function ArtPieceDetails({image, title, artist, year, genre, colo
                 ))}
         </StyledDivColors>
         <Link href="/art-pieces">
-            <button>
-                back
-            </button>
+            <StyledButton>
+                ← back
+            </StyledButton>
         </Link>
         <CommentForm onSubmitComment={handleSubmitComment}/>
         <Comments comments={commentsBySlug} onRemoveComment={handleRemoveComment}/>
-        </div>
+        </StyledParent>
     )
 
 }

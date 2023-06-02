@@ -1,16 +1,33 @@
 import React from 'react'
 import ArtPiecesPreview from '../ArtPiecesPreview'
+import styled from 'styled-components';
+
+const StyledHeading= styled.h1`
+  text-align: center;
+  margin: 100px
+  `
+const StyledListItem= styled.div`
+  list-style-type: none
+  `
+const StyledParent= styled.div`
+display: flex;
+flex-direction:column;
+gap: 100px;
+margin: 100px 0;
+
+`
 
 export default function ArtPieces({pieces, onFavs, favPieces}) {
   console.log(pieces);
-  
+
+
   return (
-    <div>
-      <h2>list of all the paintings</h2>
-      <ul>
+    <div style={{marginTop: "200px"}}>
+      {/* <StyledHeading>Gallery</StyledHeading> */}
+      <StyledParent>
         {pieces?.map((painting) => {
           return (
-              <li key={painting.slug}>
+              <StyledListItem key={painting.slug}>
                   <ArtPiecesPreview 
                     artist={painting.artist}
                     title={painting.name}
@@ -19,10 +36,10 @@ export default function ArtPieces({pieces, onFavs, favPieces}) {
                     onFavs={onFavs}
                     favPieces={favPieces}
                   />
-              </li>
+              </StyledListItem>
           )
         })}
-      </ul>
+      </StyledParent>
     </div>
   )
 }

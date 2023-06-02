@@ -1,30 +1,53 @@
 import React from "react";
 import Link from "next/link";
+import styled from "styled-components";
+
+const StyledParent= styled.ul`
+display: flex;
+justify-content: space-around;
+  background-color: #A7D7C5;
+  margin:0;
+  padding: 30px;
+  position: absolute;
+  top:0;
+  width: 100vw;
+`
+const StyledListItem= styled.li`
+  list-style-type: none;
+  `
+  const StyledButton= styled.button`
+  &:hover{
+    color:red;
+  }
+border: none;
+background-color: transparent;
+font-size:30px;
+`
 
 export default function Navigation() {
     return (
-        <ul>
-          <li>
+        <StyledParent>
+          <StyledListItem>
             <Link href="/" passHref>
-              <button>
+              <StyledButton>
                 Spotlight
-              </button>
+              </StyledButton>
             </Link>
-          </li>
-          <li>
+          </StyledListItem>
+          <StyledListItem>
             <Link href="/art-pieces">
-              <button>
-                Pieces
-              </button>
+              <StyledButton>
+                Gallery
+              </StyledButton>
             </Link>
-          </li>
-          <li>
+          </StyledListItem>
+          <StyledListItem>
             <Link href="/favorites">
-              <button>
+              <StyledButton>
                 Favorites
-              </button>
+              </StyledButton>
             </Link>
-          </li>
-        </ul>
+          </StyledListItem>
+        </StyledParent>
     );
   }

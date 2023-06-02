@@ -5,6 +5,9 @@ import styled from 'styled-components'
 const StyledButton= styled.button`
 border: none;
 background-color: transparent;
+position: absolute;
+bottom: 90px;
+left: 150px;
 `
 
 export default function FavoriteButton({onFavs, slug, favPieces}) {

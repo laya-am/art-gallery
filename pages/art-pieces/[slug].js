@@ -22,6 +22,7 @@ export default function ArtPieceSlug({favPieces, onFavs}) {
     console.log(currentPiece)
 
     return (
+
         <ArtPieceDetails 
         image={currentPiece.imageSource} 
         title={currentPiece.name} 
@@ -33,6 +34,5 @@ export default function ArtPieceSlug({favPieces, onFavs}) {
         favPieces={favPieces} 
         onFavs={onFavs}>
         </ArtPieceDetails>
-        
     )
 }

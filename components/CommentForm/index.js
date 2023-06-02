@@ -6,6 +6,16 @@ const StyledForm = styled.form`
   width: 300px;
 `;
 
+const StyledLabel = styled.label`
+margin: 20px 0;
+`
+const StyledButton= styled.button`
+margin: 20px;
+font-size: 20px;
+border-radius:10px;
+padding: 10px
+`
+
 export default function CommentForm({ onSubmitComment }) {
     
     function handleSubmit(event) {
@@ -17,9 +27,9 @@ export default function CommentForm({ onSubmitComment }) {
   
     return (
       <StyledForm onSubmit={handleSubmit}>
-        <label htmlFor="comment">Your Comment:</label>
+        <StyledLabel htmlFor="comment">Your Comment:</StyledLabel>
         <textarea rows="3" id="comment" name="comment" /> 
-        <button type="submit">Submit</button>
+        <StyledButton type="submit">Submit</StyledButton>
       </StyledForm>
     );
   }
