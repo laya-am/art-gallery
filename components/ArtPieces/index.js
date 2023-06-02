@@ -1,7 +1,7 @@
 import React from 'react'
 import ArtPiecesPreview from '../ArtPiecesPreview'
 
-export default function ArtPieces({pieces}) {
+export default function ArtPieces({pieces, onFavs, favPieces}) {
   console.log(pieces);
   
   return (
@@ -16,6 +16,8 @@ export default function ArtPieces({pieces}) {
                     title={painting.name}
                     image={painting.imageSource}
                     slug={painting.slug}
+                    onFavs={onFavs}
+                    favPieces={favPieces}
                   />
               </li>
           )

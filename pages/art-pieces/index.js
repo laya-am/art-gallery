@@ -1,12 +1,12 @@
 import ArtPieces from "../../components/ArtPieces";
 import { useArtPiecesStore } from "../../stores/artPiecesStore";
 
-export default function ArtPiecesPage() {
+export default function ArtPiecesPage({onFavs, favPieces}) {
   const pieces = useArtPiecesStore((state) => state.pieces);
 
   return (
     <div>
-      <ArtPieces pieces={pieces} />
+      <ArtPieces onFavs={onFavs} pieces={pieces} favPieces={favPieces} />
     </div>
   );
 }

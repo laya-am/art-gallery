@@ -18,6 +18,13 @@ export default function Navigation() {
               </button>
             </Link>
           </li>
+          <li>
+            <Link href="/favorites">
+              <button>
+                Favorites
+              </button>
+            </Link>
+          </li>
         </ul>
     );
   }

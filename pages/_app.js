@@ -9,13 +9,13 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   const setPieces = useArtPiecesStore((state) => state.setPieces);
-  
+
   const { data: pieces , error, isLoading } = useSWR(url, fetcher)
-  
+
   useEffect(() => {
     setPieces(pieces || []);
   }, [setPieces, pieces]);
-  
+
   const [favPieces, setFavPieces] = useState([])
 
   function handleFavs(slug){
@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }) {
       }
       // if the favPiece is not in the state, add it with isFunny set to true
       return [...favPieces, { slug, isFav: true }];
+      
     });
     return favPieces;
   }
@@ -41,7 +42,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Layout>
-        <Component onFavs={handleFavs} {...pageProps} />
+        <Component onFavs={handleFavs} favPieces={favPieces} {...pageProps} />
       </Layout>
     </>
   );
