@@ -35,10 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/art-pieces.js"
     ],
-    "/art-pieces/[slug]": [
+    "/favorites": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/art-pieces/[slug].js"
+      "static/chunks/pages/favorites.js"
     ]
   },
   "ampFirstPages": []

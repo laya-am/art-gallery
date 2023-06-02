@@ -2,12 +2,14 @@ import GlobalStyle from "../styles";
 import useSWR from "swr";
 import { useArtPiecesStore } from "../stores/artPiecesStore";
 import { useEffect, useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 import Layout from "../components/Layout";
 
 const url = "https://example-apis.vercel.app/api/art";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
+  const [favPieces, setFavPieces] = useLocalStorageState("favPieces", {defaultValue:[]});
   const setPieces = useArtPiecesStore((state) => state.setPieces);
 
   const { data: pieces , error, isLoading } = useSWR(url, fetcher)
@@ -16,7 +18,7 @@ export default function App({ Component, pageProps }) {
     setPieces(pieces || []);
   }, [setPieces, pieces]);
 
-  const [favPieces, setFavPieces] = useState([])
+  // const [favPieces, setFavPieces] = useState([])
 
   function handleFavs(slug){
     setFavPieces((favPieces) => {
@@ -30,8 +32,8 @@ export default function App({ Component, pageProps }) {
       }
       // if the favPiece is not in the state, add it with isFunny set to true
       return [...favPieces, { slug, isFav: true }];
-      
     });
+    // setFavPieces(favPieces)
     return favPieces;
   }
 
