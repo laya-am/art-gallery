@@ -1,15 +1,6 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-<<<<<<< HEAD
-  "/art-pieces": "pages/art-pieces.js",
-  "/favorites": "pages/favorites.js",
-  "/": "pages/index.js",
+  "/_error": "pages/_error.js",
   "/art-pieces/[slug]": "pages/art-pieces/[slug].js"
-=======
-  "/": "pages/index.js",
-  "/art-pieces/[slug]": "pages/art-pieces/[slug].js",
-  "/art-pieces": "pages/art-pieces.js"
->>>>>>> main
 }

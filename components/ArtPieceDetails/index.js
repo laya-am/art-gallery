@@ -12,6 +12,12 @@ align-items: center;
 gap: 30px;
 margin: 200px 0;
 `
+const StyledButton= styled.button`
+font-size: 20px;
+border-radius:10px;
+padding: 10px
+`
+
 const StyledDivColors = styled.div`
   display: flex;
 `;
@@ -59,9 +65,9 @@ export default function ArtPieceDetails({image, title, artist, year, genre, colo
                 ))}
         </StyledDivColors>
         <Link href="/art-pieces">
-            <button>
-                back
-            </button>
+            <StyledButton>
+                ← back
+            </StyledButton>
         </Link>
         <CommentForm onSubmitComment={handleSubmitComment}/>
         <Comments comments={commentsBySlug} onRemoveComment={handleRemoveComment}/>
