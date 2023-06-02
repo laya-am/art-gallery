@@ -3,7 +3,7 @@ import ArtPieceDetails from "../../components/ArtPieceDetails";
 import { useArtPiecesStore } from "../../stores/artPiecesStore";
 import Link from "next/link";
 
-export default function ArtPieceSlug() {
+export default function ArtPieceSlug({favPieces, onFavs}) {
     const pieces = useArtPiecesStore((state) => state.pieces);
 
     const router = useRouter();
@@ -20,8 +20,7 @@ export default function ArtPieceSlug() {
 console.log(currentPiece)
 
     return (
-        //<div>hi</div>
-        <ArtPieceDetails image={currentPiece.imageSource} title={currentPiece.name} artist={currentPiece.artist} genre={currentPiece.genre} year={currentPiece.year}></ArtPieceDetails>
+        <ArtPieceDetails image={currentPiece.imageSource} title={currentPiece.name} artist={currentPiece.artist} genre={currentPiece.genre} year={currentPiece.year} favPieces={favPieces}> onFavs={onFavs}</ArtPieceDetails>
         
     )
 }
